@@ -134,7 +134,7 @@ const Home = () => {
             <h1 className={`text-3xl md:text-5xl mb-4 font-shadows font-extralight ${typingText ? 'typing' : ''}`} ref={textRef}>
               {typingText}
             </h1>
-            <p className="text-base md:text-lg mb-6 font-raleway">I'm a passionate developer specializing in creating user intuitive web applications.</p>
+            <p className="text-base md:text-lg mb-6 font-raleway">I&apos;m a passionate developer specializing in creating user intuitive web applications</p>
             <a href="#skills" className="font-raleway inline-block px-4 py-2 md:px-6 md:py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition duration-300">
               Explore My Skills
             </a>
@@ -143,7 +143,7 @@ const Home = () => {
 
         <section id="skills" className={`py-16 md:py-20 bg-gray-800 relative ${skillsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={skillsRef}>
           <div className="relative z-10 container mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 font-dosis">&lsquo;The&rsquo; Tech Stack</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 font-dosis">The Tech Stack</h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               {skillsData.map((skill, index) => (
                 <div key={index} className="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center w-72 transform transition-transform hover:scale-105 hover:shadow-xl">
@@ -157,7 +157,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="projects" className={`py-16 md:py-20 bg-gray-900 relative ${projectsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={projectsRef}>
+        <section id="projects" className={`py-16 md:py-20 bg-gray-900 relative opacity-100 transition-opacity duration-1000`} ref={projectsRef}>
           <div className="relative z-10 container mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-raleway text-white mb-8 md:mb-12">My Projects</h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
