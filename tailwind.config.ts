@@ -7,6 +7,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      dosis: ['Dosis', 'sans-serif'],
+      libre: ['Libre Baskerville', 'serif'],
+      shadows: ['"Shadows Into Light"', 'cursive'],
+      raleway: ['Raleway', 'sans-serif'],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
