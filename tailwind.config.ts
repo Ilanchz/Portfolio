@@ -12,6 +12,7 @@ const config: Config = {
       libre: ['Libre Baskerville', 'serif'],
       shadows: ['"Shadows Into Light"', 'cursive'],
       raleway: ['Raleway', 'sans-serif'],
+      calligraffitti: ['Calligraffitti', 'cursive'], // Add the Calligraffitti font here
     },
     extend: {
       backgroundImage: {
@@ -23,4 +24,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

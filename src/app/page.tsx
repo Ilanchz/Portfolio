@@ -107,19 +107,14 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row justify-center items-center">
+    <div className="min-h-screen bg-gray-200 text-white flex flex-col md:flex-row justify-center items-center">
   
-      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4 md:space-y-6 z-10">
-        <a href="#hero" className="w-4 h-4 rounded-full bg-blue-300 transition-colors duration-300"></a>
-        <a href="#skills" className="w-4 h-4 rounded-full bg-blue-300 transition-colors duration-300"></a>
-        <a href="#projects" className="w-4 h-4 rounded-full bg-blue-300 transition-colors duration-300"></a>
-      </div>
   
       <div className="flex-1">
   
-        <section id="hero" className={`relative h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-teal-500 transition-opacity duration-1000 ${heroInView ? 'opacity-100' : 'opacity-0'}`} ref={heroRef}>
+        <section id="hero" className={`relative h-screen w-screen flex flex-col items-center justify-center bg-gray-300 text-black ${heroInView ? 'opacity-100' : 'opacity-0'}`} ref={heroRef}>
           <div className="absolute inset-0 overflow-hidden">
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <svg className="absolute inset-0 w-full h-full bg-gradient-to-b from-gray-300 to-gray-200 " viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="white">
               <g>
                 <path
                   fill="#ffffff22"
@@ -131,56 +126,56 @@ const Home = () => {
             </svg>
           </div>
           <div className="relative z-10 text-center px-6 md:px-12">
-            <h1 className={`text-xl md:text-5xl mb-4 font-shadows font-extralight ${typingText ? 'typing' : ''}`} ref={textRef}>
+            <h1 className={`text-xl md:text-5xl mb-4 font-dosis ${typingText ? 'typing' : ''}`} ref={textRef}>
               {typingText}
             </h1>
-            <p className="text-base md:text-lg mb-6 font-raleway">I&apos;m a passionate developer specializing in creating user intuitive web applications</p>
-            <a href="#skills" className="font-raleway inline-block px-4 py-2 md:px-6 md:py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition duration-300">
+            <p className="text-base md:text-lg mb-6 font-raleway">I&apos;m a passionate developer specializing in creating user intuitive web applications. Welcome to my digital-paper portfolio </p>
+            <a href="#skills" className="font-raleway font-bold inline-block px-4 py-2 md:px-6 md:py-3 bg-black text-white rounded-lg transition duration-300">
               Explore My Skills
             </a>
           </div>
         </section>
   
-        <section id="skills" className={`py-16 md:py-20 bg-gray-800 relative ${skillsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={skillsRef}>
+        <section id="skills" className={`py-16 md:py-20 bg-gray-200 relative ${skillsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={skillsRef}>
           <div className="relative z-10 container mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 font-dosis">The Tech Stack</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-8 md:mb-12 font-raleway">The Tech Stack</h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               {skillsData.map((skill, index) => (
-                <div key={index} className="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center w-32 lg:w-72 transform transition-transform hover:scale-105 hover:shadow-xl">
-                  <div className="flex items-center justify-center mb-4 space-x-1 md:space-x-2">
+                <div key={index} className="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center w-32 lg:w-72 transform transition-transform hover:scale-105 hover:shadow-xl">
+                  <div className="flex justify-center mb-4 space-x-1 md:space-x-2">
                     <Image src={skill.icon} alt={skill.name} width={64} height={64} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white font-dosis">{skill.name}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold text-black font-dosis">{skill.name}</h3>
                 </div>
               ))}
             </div>
           </div>
         </section>
   
-        <section id="projects" className={`py-16 md:py-20 bg-gray-900 relative ${projectsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={projectsRef}>
+        <section id="projects" className={`py-16 md:py-20 bg-gray-200 relative ${projectsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={projectsRef}>
           <div className="relative z-10 container mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-raleway text-white mb-8 md:mb-12">My Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-raleway text-black mb-8 md:mb-12">My Projects</h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               {projectsData.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg flex flex-col items-start w-full md:w-2/3 h-auto transform transition-transform hover:scale-105 hover:shadow-xl"
+                  className="bg-gray-100 p-4 md:p-6 shadow-lg flex flex-col items-start w-full md:w-2/3 h-auto transform transition-transform hover:scale-105"
                 >
-                  <h3 className="text-xl md:text-2xl font-raleway font-semibold text-white mb-4">{project.name}</h3>
-                  <p className="text-gray-400 mb-4 text-left">{project.description}</p>
+                  <h3 className="text-xl md:text-2xl font-raleway font-semibold text-black mb-4">{project.name}</h3>
+                  <p className="text-gray-500 mb-4 text-left">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.techStack.map((tech, idx) => (
-                      <span key={idx} className="p-2 bg-blue-700 text-gray-200 rounded-xl text-xs md:text-sm font-raleway font-extrabold">{tech}</span>
+                      <span key={idx} className="p-2 bg-gray-100 text-black rounded-xl text-xs md:text-sm font-raleway font-extrabold">{tech}</span>
                     ))}
                   </div>
-                  <a href={project.link} className="text-blue-400 hover:text-blue-300 transition duration-300 text-sm md:text-base">Explore CodeBase</a>
+                  <a href={project.link} className="text-black self-center underline font-bold font-raleway transition duration-300 text-sm md:text-base">Explore CodeBase</a>
                 </div>
               ))}
             </div>
           </div>
         </section>
   
-        <footer className="bg-gray-800 text-white py-6">
+        <footer className="bg-gray-200 text-gray-500 py-6 border-t-2 border-gray-400 opacity-90">
           <div className="container mx-auto flex flex-col items-center justify-center space-y-4">
             <div className="flex flex-col sm:flex-row sm:space-x-4 gap-5">
               <a href="https://github.com/Ilanchz" target="_blank" rel="noopener noreferrer" className="font-dosis font-extrabold flex items-center space-x-2 hover:text-gray-400 transition duration-300">
@@ -194,12 +189,12 @@ const Home = () => {
             </div>
             <button
               onClick={fetchJoke}
-              className="font-shadows font-bold mt-4 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition duration-300"
+              className="font-raleway font-bold mt-4 px-4 py-2 text-white bg-black rounded-lg"
             >
               Generate a Joke
             </button>
             <p className="text-gray-400 mt-2 text-center">{joke}</p>
-            <h4 className='font-raleway'>
+            <h4 className='font-raleway text-gray-300'>
               <a href="https://youtu.be/xvFZjo5PgG0">Click here for free ChatGPT Plus API</a>
             </h4>
           </div>

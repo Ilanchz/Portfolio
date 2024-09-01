@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
 
 
 @tailwind base;
@@ -52,10 +53,9 @@ svg {
 /* styles.css or global.css */
 
 .typing {
-  font-family: monospace;
+  font-family: 'raleway';
   white-space: nowrap;
   overflow: hidden;
-  border-right: 0.15em solid orange; /* Cursor effect */
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
@@ -66,7 +66,7 @@ svg {
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: orange; }
+  50% { border-color: black; }
 }
 
 html {
