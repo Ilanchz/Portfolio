@@ -194,9 +194,6 @@ const Home = () => {
               Generate a Joke
             </button>
             <p className="text-gray-400 mt-2 text-center">{joke}</p>
-            <h4 className='font-raleway text-gray-300'>
-              <a href="https://youtu.be/xvFZjo5PgG0">Click here for free ChatGPT Plus API</a>
-            </h4>
           </div>
         </footer>
       </div>
