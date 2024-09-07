@@ -11,7 +11,7 @@ const Home = () => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const fullText = "Hi, I'm Ilanchezhiyan...";
+    const fullText = "Hi, I'm Ilanchezhiyan... ";
     let index = 0;
 
     const typeEffect = () => {
@@ -107,6 +107,8 @@ const Home = () => {
   ];
 
   return (
+
+
     <div className="min-h-screen bg-gray-200 text-white flex flex-col md:flex-row justify-center items-center overflow-clip">
   
   
@@ -125,7 +127,11 @@ const Home = () => {
               </g>
             </svg>
           </div>
-          <div className="relative z-10 text-center px-6 md:px-12">
+          <div className="flex md:flex-row flex-col items-center z-10 text-center px-6 md:px-12 justify-between">
+            {/* <div className='md:w-1/6'>
+              <img src="me.jpg" className='relative h-32 w-32 rounded-full hidden hover:block'></img>
+            </div> */}
+            <div className='md:w-full'>
             <h1 className={`text-xl md:text-5xl mb-4 font-dosis ${typingText ? 'typing' : ''}`} ref={textRef}>
               {typingText}
             </h1>
@@ -133,15 +139,18 @@ const Home = () => {
             <a href="#skills" className="font-raleway font-bold inline-block px-4 py-2 md:px-6 md:py-3 bg-black text-white rounded-lg transition duration-300">
               Explore My Skills
             </a>
+            </div>
+            
+            
           </div>
         </section>
   
-        <section id="skills" className={`py-16 md:py-20 bg-gray-200 relative ${skillsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={skillsRef}>
-          <div className="relative z-10 container mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-8 md:mb-12 font-raleway">The Tech Stack</h2>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        <section id="skills" className={`flex flex-col justify-center items-center p-5 bg-black relative ${skillsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={skillsRef}>
+        <h2 className="text-3xl text-center md:text-4xl font-bold text-white mb-8 md:mb-12 font-raleway">The Tech Stack</h2>
+          <div className="w-full flex justify-center items-center bg-black rounded-2xl relative z-10 container text-center">
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 m-5">
               {skillsData.map((skill, index) => (
-                <div key={index} className="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center w-32 lg:w-72 transform transition-transform hover:scale-105 hover:shadow-xl">
+                <div key={index} className="justify-between bg-gray-200 p-4 md:p-6 rounded-lg shadow-lg text-center flex h-36 flex-col items-center w-32 lg:w-72 transform transition-transform hover:scale-105 hover:shadow-xl">
                   <div className="flex justify-center mb-4 space-x-1 md:space-x-2">
                     <Image src={skill.icon} alt={skill.name} width={64} height={64} />
                   </div>
@@ -152,39 +161,46 @@ const Home = () => {
           </div>
         </section>
   
-        <section id="projects" className={`py-16 md:py-20 bg-gray-200 relative ${projectsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={projectsRef}>
-          <div className="relative z-10 container mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-raleway text-black mb-8 md:mb-12">My Projects</h2>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-              {projectsData.map((project, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-100 p-4 md:p-6 shadow-lg flex flex-col items-start w-full md:w-2/3 h-auto transform transition-transform hover:scale-105"
-                >
-                  <h3 className="text-xl md:text-2xl font-raleway font-semibold text-black mb-4">{project.name}</h3>
-                  <p className="text-gray-500 mb-4 text-left">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.techStack.map((tech, idx) => (
-                      <span key={idx} className="p-2 bg-gray-100 text-black rounded-xl text-xs md:text-sm font-raleway font-extrabold">{tech}</span>
-                    ))}
-                  </div>
-                  <a href={project.link} className="text-black self-center underline font-bold font-raleway transition duration-300 text-sm md:text-base">Explore CodeBase</a>
-                </div>
+        <section id="projects" className={`p-16 pb-0 bg-gray-200 relative ${projectsInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`} ref={projectsRef}>
+  <div className="relative z-10 container mx-auto text-center">
+    <div className="-z-10 absolute left-1/2 w-1 h-full bg-black"></div>
+    <div className='z-10 bg-white rounded-xl'>
+      <h2 className="text-3xl md:text-4xl font-bold font-raleway text-black mb-8 md:mb-12">My Projects</h2>
+    </div>
+    
+    <div className="flex flex-col gap-10 md:gap-8 w-full">
+      {projectsData.map((project, index) => (
+        <div
+          key={index}
+          className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} w-full p-2 m-2 `}
+        >
+          <div
+            className="z-10 p-4 bg-gray-100 m-4 md:p-6 shadow-lg flex flex-col items-start w-2/3 md:w-1/2 h-auto transform transition-transform hover:scale-105"
+          >
+            <h3 className="text-xl md:text-2xl font-raleway font-semibold text-black mb-4">{project.name}</h3>
+            <p className="text-gray-500 mb-4 text-left">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.techStack.map((tech, idx) => (
+                <span key={idx} className="p-2 bg-gray-100 text-black rounded-xl text-xs md:text-sm font-raleway font-extrabold">{tech}</span>
               ))}
             </div>
+            <a href={project.link} className="text-black self-center underline font-bold font-raleway transition duration-300 text-sm md:text-base">Explore CodeBase</a>
           </div>
-        </section>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
   
-        <footer className="bg-gray-200 text-gray-500 py-6 border-t-2 border-gray-400 opacity-90">
+        <footer className="bg-black text-gray-500 py-6 border-t-2 border-gray-400 opacity-90">
           <div className="container mx-auto flex flex-col items-center justify-center space-y-4">
             <div className="flex flex-col sm:flex-row sm:space-x-4 gap-5">
-              <a href="https://github.com/Ilanchz" target="_blank" rel="noopener noreferrer" className="font-dosis font-extrabold flex items-center space-x-2 hover:text-gray-400 transition duration-300">
-                <Image src="/github.png" alt="GitHub" width={24} height={24} />
-                <span>GitHub</span>
+              <a href="https://github.com/Ilanchz" target="_blank" rel="noopener noreferrer" className="font-dosis font-extrabold flex items-center space-x-2 hover:text-gray-400 transition-all duration-400 hover:pl-4">
+                <Image src="/github.png" alt="GitHub" className='bg-white rounded-full' width={40} height={40} />
               </a>
-              <a href="https://in.linkedin.com/in/ilanchezhiyan-v-78876326a" target="_blank" rel="noopener noreferrer" className="font-dosis font-extrabold flex items-center space-x-2 hover:text-gray-400 transition duration-300">
-                <Image src="/linkedin.png" alt="LinkedIn" width={24} height={24} />
-                <span>LinkedIn</span>
+              <a href="https://in.linkedin.com/in/ilanchezhiyan-v-78876326a" target="_blank" rel="noopener noreferrer" className="font-dosis font-extrabold flex items-center space-x-2 hover:text-gray-400 transition-all duration-400 hover:pr-4">
+                <Image src="/linkedin.png" alt="LinkedIn" width={40} height={40} />
               </a>
             </div>
             <button
@@ -194,6 +210,7 @@ const Home = () => {
               Generate a Joke
             </button>
             <p className="text-gray-400 mt-2 text-center">{joke}</p>
+            <p>© Ilanchezhiyan</p>
           </div>
         </footer>
       </div>
