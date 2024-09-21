@@ -6,6 +6,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <meta name="description" content="Your website description" />
+        <link rel="icon" href="/favicon.jpg" type="image/x-icon" />
         {/* You can add more meta tags or links here */}
       </head>
       <body className="font-sans bg-gray-900 text-gray-100">
